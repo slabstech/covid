@@ -2,17 +2,6 @@
 layout: page
 ---
 
-# Covid
- Information for Hubballi - Dharwad
-
- * Cases
-   * Active
-   * Recovered
-   * Total
-
-
-
-
 * Quarantine Centers
   *  [List of Private Places]({{ site.baseurl }}{% link _posts/2020-07-24-quarantine-private-center.md  %})
 
@@ -39,7 +28,10 @@ layout: page
 * Sources :
   * [Support Dharwad Website](https://www.supportdharwad.in/notification)
   * [Twitter DC Dharwad](https://twitter.com/dc_dharwad)
+
+
 * Developed by [S Labs Solutions](https://slabs.tech)
+
 * Contact : 8073659121 (Whatsapp only)
 
 * Disclaimer :

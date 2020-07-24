@@ -1,13 +1,3 @@
 # Site navigation links
-
-- title: Mars
-  url: /mars/
-
-- title: Books
-  url: /books/
-
-- title: About
-  url: /about/
-
-- title: Search
-  url: /search/
+#- title: Mars
+#  url: /mars/

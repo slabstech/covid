@@ -1,4 +1,0 @@
-https://jitpack.io/
-https://github.com/mukeshsolanki/MarkdownView-Android
-
-https://github.com/falnatsheh/MarkdownView
