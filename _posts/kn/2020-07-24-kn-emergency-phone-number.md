@@ -2,7 +2,7 @@
 layout: post
 title:  "Emergency Contact Number"
 date:   2020-07-24 13:20:40 +0530
-categories: update
+categories: info
 ---
 
 | Hospital  | Contact Number |
