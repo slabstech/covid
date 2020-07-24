@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: "COVID : Hubballi Dharwad"
+title: "ಕೋವಿಡ್ ಹುಬ್ಬಳ್ಳಿ - ಧಾರವಾಡ / COVID : Hubballi-Dharwad "
 locale: en_US
-description: "Information for Hubli Dharwad"
+description: "ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡದ ಮಾಹಿತಿ / Information for Hubballi Dharwad"
 logo: #site/site-logo.jpg
 search: true
 url: "https://slabs.tech/covid"
