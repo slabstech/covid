@@ -5,7 +5,7 @@ locale: en_US
 description: "Information for Hubli Dharwad"
 logo: #site/site-logo.jpg
 search: true
-url: "https://gaganyatri.com"
+url: "https://slabs.tech/covid"
 
 # Jekyll configuration
 remote_theme: "mmistakes/so-simple-theme"
@@ -43,8 +43,6 @@ mathjax: true
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
-disqus:
-  shortname: gaganyatri
 # Site owner
 owner:
   name: gaganyatri
