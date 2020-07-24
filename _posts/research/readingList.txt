@@ -1,0 +1,6 @@
+
+https://github.com/nightrome/really-awesome-gan
+https://github.com/nightrome/really-awesome-semantic-segmentation
+
+https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf
+

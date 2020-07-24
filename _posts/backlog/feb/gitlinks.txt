@@ -1,0 +1,9 @@
+https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
+
+https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+
+https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#Initializing-a-Repository-in-an-Existing-Directory
+
+https://git-scm.com/docs/git-init
+
+https://www.atlassian.com/git/tutorials/setting-up-a-repository

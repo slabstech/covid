@@ -1,0 +1,20 @@
+<footer id="footer" class="site-footer">
+  {% include footer-custom.html %}
+
+  <div >
+  	<span> Support my work ? <a href="https://gaganyatri.com/site/supporting-my-work" >Connect / Donate </a>   </span>
+  	<span>, <a href="https://gaganyatri.com/site/disclaimer" > Disclaimer </a>  </span>
+  	<span>, <a href="https://gaganyatri.com/site/credits" > Credits </a>  </span>
+  	<span>, <a href="https://gaganyatri.com/site/privacy" > Privacy </a>  </span>
+    <span>, <a href="https://gaganyatri.com/tags" > sitemap </a>  </span>  
+  </div>
+
+<br> <br>
+  <div class="copyright">
+    {% if site.copyright %}
+      {{ site.copyright | markdownify }}
+    {% else %}
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    {% endif %}
+  </div>
+</footer>

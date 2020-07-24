@@ -1,0 +1,62 @@
+	
+
+Yes, you could do this, but it might not work at the quality you want if it's all you do. The task isn't simple, there's no "simple" algorithm that just does "road" or "heading" detection based on images. Also, there are existing implementations in a number of languages, here's one in C++.
+
+One thing you should consider is that roads aren't always straight, so the vanishing point could be around a turn in the road...
+
+The Stanford DARPA Grand Challenge and DARPA Urban Challenge vehicle used color based detection to detect drivable surface (e.g. road) and then used some sort of edge detection and line-forming algorithm (it's unclear if it was Hough Transform based) to define a "forward looking" estimation of road direction. I do believe they used some kind of system to detect the vanishing point, and they definitely accounted for turns in the road.
+
+I suppose what you really need to detect is the road edges, turn those into lines (not necessarily straight) and then find convergence points. This assumes a number of other hard tasks can be solved: (1) your imagery is of appropriate quality; (2) you can detect the road, or at a minimum its edges; (3) you can process the imagery fast enough to keep up with vehicle movement.
+
+If all you're doing is analyzing some existing video, I'd start with a very basic approach:
+
+    Detect the road surface in the video -- this is a segmentation task, find all pixels in the image which are road; it will help here to have three classes to segment: road, not-road, and sky.
+    Find the horizon (this is roughly where your road/not-road and sky classes meet
+    Use a simple edge detector (say a Sobel edge detector) to differentiate the edges between road and non-road
+    Apply a Hough Transform on the Sobel edges to draw "lines" for the edge of the road
+    Find where the road-lines meet at the horizon
+
+
+
+
+Code : https://bitbucket.org/djlyon/smp-driverless-car-robot/src/1e219a4de6ac/vision/
+
+
+
+http://docs.opencv.org/master/d4/db1/tutorial_documentation.html
+
+https://github.com/opencv/opencv/wiki/How_to_contribute
+
+https://github.com/opencv/opencv
+
+
+https://github.com/opencv/opencv/issues?q=is%3Aopen+is%3Aissue+label%3Aeasy
+
+http://opencv.org/platforms/android/
+
+https://source.android.com/source/code-style
+
+http://docs.opencv.org/2.4/doc/tutorials/introduction/android_binary_package/O4A_SDK.html
+
+http://docs.opencv.org/2.4/doc/tutorials/introduction/android_binary_package/dev_with_OCV_on_Android.html#dev-with-ocv-on-android
+
+
+
+http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
+
+
+http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/
+
+
+
+https://realpython.com/blog/python/python-virtual-environments-a-primer/
+
+
+
+http://www.pyimagesearch.com/2016/05/02/accessing-rpi-gpio-and-gpio-zero-with-opencv-python/
+
+
+http://opencv.org/evs2017-talks.html
+
+
+
