@@ -2,28 +2,35 @@
 layout: page
 ---
 
-<!---
+
 English Version Below
+
 ಆಪ್ತಮಿತ್ರ ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ : 14410
 
 * ಸಂಪರ್ಕ ಸಂಖ್ಯೆ
 
   * [ಕೋವಿಡ್ ಕಾರ್ಯಪಡೆ ತಂಡ ಮತ್ತು ಮೊಬೈಲ್ ಸಂಖ್ಯೆಗಳನ್ನು ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-covid-task-force.md %})
-  * [tahsildar list]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-tahsildar-contact-whatsapp.md  %})
-  * [transport]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-covid-transport-ambulance.md  %})
-  * [Emergencz]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-emergency-phone-number.md  %})
 
-* quarantine Care center
-  * Govt
-  * Private
+  * [ಜಿಲ್ಲಾಧಿಕಾರಿ ,ಉಪ ವಿಭಾಗೀಯ ಅಧಿಕಾರಿ,  ತಹಶೀಲ್ದಾರ್ ವಾಟ್ಸಾಪ್ ಫೋನ್ ಪಟ್ಟಿ ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-tahsildar-contact-whatsapp.md  %})
 
-* Covid hospital
-  * Private
-  * Govt
+  * [ಕೋವಿಡ್ ರೋಗಿಗಳಿಗೆ ಆಸ್ಪತ್ರೆಗಳಿಗೆ ಆಂಬ್ಯುಲೆನ್ಸ್ ಸಾಗಣೆ ಫೋನ್ ಪಟ್ಟಿ ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-covid-transport-ambulance.md  %})
 
+  * [ತುರ್ತು ಸಂಪರ್ಕ ಆಸ್ಪತ್ರೆಗಳ ಪಟ್ಟಿ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-emergency-phone-number.md  %})
+
+* ಕೋವಿಡ್ ಆರೈಕೆ ಕೇಂದ್ರ
+
+  * ಸರ್ಕಾರಿ ಸ್ಥಳ ಪಟ್ಟಿ
+
+  * ಖಾಸಗಿ ಸ್ಥಳ ಪಟ್ಟಿ
+
+* ಕೋವಿಡ್ ಆಸ್ಪತ್ರೆಗಳು
+
+  * ಸರ್ಕಾರಿ ಸ್ಥಳ ಪಟ್ಟಿ
+
+  * ಖಾಸಗಿ ಸ್ಥಳ ಪಟ್ಟಿ
 
   ------------
--->
+
 * Aapthamitra Helpline Number : 14410
 
 
@@ -37,7 +44,7 @@ English Version Below
 
   * [Emergency Phone > Hospital List]({{ site.baseurl }}{% link _posts/en/2020-07-24-emergency-phone-number.md  %})
 
-* Quarantine Care Centers
+* Covid Care Centers
   *  [List of Private Places]({{ site.baseurl }}{% link _posts/en/2020-07-24-quarantine-private-center.md  %})
 
   * [List of Government Places]({{ site.baseurl }}{% link _posts/en/2020-07-24-quarantine-govt-center.md  %})
@@ -51,18 +58,21 @@ English Version Below
 
 * [Positive Cases Map](https://track.hdbrts.com/public.html)
 
+  ------------
 * Sources :
   * [Support Dharwad Website](https://www.supportdharwad.in/notification)
 
   * [Twitter DC Dharwad](https://twitter.com/dc_dharwad)
 
+  ------------
+
+* Disclaimer :
+All external links are property of the respective owners, this website only provides information available online. No rights reserved. Earnest apologies for errors in name.
+
 
 * Developed by [S Labs Solutions](https://slabs.tech)
 
 * Contact : 8073659121 (Whatsapp only)
-
-* Disclaimer :
-All external links are property of the respective owners, this website only provides information available online. No rights reserved. Earnest apologies for errors in name.
 
 * Contribute :
   * Data  + Code : [https://github.com/slabstech/covid](https://github.com/slabstech/covid)
