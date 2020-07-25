@@ -5,6 +5,7 @@ layout: page
 
 English Version Below
 
+
 ಆಪ್ತಮಿತ್ರ ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ : 14410
 
 * ಸಂಪರ್ಕ ಸಂಖ್ಯೆ
@@ -19,17 +20,18 @@ English Version Below
 
 * ಕೋವಿಡ್ ಆರೈಕೆ ಕೇಂದ್ರ
 
-  * ಸರ್ಕಾರಿ ಸ್ಥಳ ಪಟ್ಟಿ
+  * [ಸರ್ಕಾರಿ ಸ್ಥಳ ಪಟ್ಟಿ ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-quarantine-govt-center.md  %})
 
-  * ಖಾಸಗಿ ಸ್ಥಳ ಪಟ್ಟಿ
+  * [ಖಾಸಗಿ ಸ್ಥಳ ಪಟ್ಟಿ  ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-quarantine-private-center.md  %})
 
 * ಕೋವಿಡ್ ಆಸ್ಪತ್ರೆಗಳು
 
-  * ಸರ್ಕಾರಿ ಸ್ಥಳ ಪಟ್ಟಿ
+  * [ಸರ್ಕಾರಿ ಸ್ಥಳ ಪಟ್ಟಿ ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-covid-govt-hospital.md  %})
 
-  * ಖಾಸಗಿ ಸ್ಥಳ ಪಟ್ಟಿ
+  * [ಖಾಸಗಿ ಸ್ಥಳ ಪಟ್ಟಿ ]({{ site.baseurl }}{% link _posts/kn/2020-07-24-kn-covid-private-hospital.md  %})
 
-  ------------
+------------
+
 
 * Aapthamitra Helpline Number : 14410
 
