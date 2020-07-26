@@ -6,15 +6,26 @@ modified: 2020-07-24T19:44:38.564948-04:00
 
 ---
 <script src="https://d3js.org/d3.v3.min.js"></script>
-<div id="chart-total"></div>
-<div id="chart-active"></div>
+
+<table>
+<tr>
+  <td><div id="chart-total"></div> Confirmed Cases
+</td>
+  <td><div id="chart-active"></div> Active Cases
+</td>
+</tr>
+<tr>
+  <td><div id="chart-deceased"></div> Deceased
+</td>
+  <td><div id="chart-recovered"></div> Recovered
+</td>
+</tr>
+</table>
+
 
 <style>
 
 /* Bar Chart */
-.bar {
-  fill: steelblue;
-}
 
 .bar:hover {
   fill: brown;
@@ -64,6 +75,26 @@ var svg = d3.select("#chart-total").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var svg2 = d3.select("#chart-active").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var svg3 = d3.select("#chart-deceased").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var svg4 = d3.select("#chart-recovered").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
 d3.json("/data/bar-chart-total.json", function(error, data) {
   if (error) throw error;
 
@@ -92,13 +123,111 @@ d3.json("/data/bar-chart-total.json", function(error, data) {
       .attr("x", function(d) { return x(d.day); })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.total); })
+      .attr("fill", function (d){ return "lightblue"; })
       .attr("height", function(d) { return height - y(d.total); });
 });
 
-function type(d) {
-  d.total = +d.total;
-  return d;
-}
+
+d3.json("/data/bar-chart-active.json", function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.day; }));
+  y.domain([0, d3.max(data, function(d) { return d.active; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of Active Cases");
+
+  svg2.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.day); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.active); })
+      .attr("fill", function (d){ return "#ffa500"; })
+      .text("Value vs Date Graph")
+      .attr("height", function(d) { return height - y(d.active); }) ;
+});
+
+d3.json("/data/bar-chart-deceased.json", function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.day; }));
+  y.domain([0, d3.max(data, function(d) { return d.deceased; })]);
+
+  svg3.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg3.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of Deceased");
+
+  svg3.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.day); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.deceased); })
+      .attr("fill", function (d){ return "#ff3232"; })
+      .attr("height", function(d) { return height - y(d.deceased); });
+});
+
+
+d3.json("/data/bar-chart-recovered.json", function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.day; }));
+  y.domain([0, d3.max(data, function(d) { return d.recovered; })]);
+
+  svg4.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg4.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+
+      .text("Number of Recovered Cases");
+
+  svg4.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("fill", function (d){ return "lightgreen"; })
+      .attr("x", function(d) { return x(d.day); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.recovered); })
+      .attr("height", function(d) { return height - y(d.recovered); });
+});
+
+
 </script>
 
 
