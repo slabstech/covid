@@ -5,7 +5,7 @@ excerpt: ""
 modified: 2020-07-24T19:44:38.564948-04:00
 
 ---
-<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
 
 <table>
 <tr>
@@ -95,7 +95,7 @@ var svg4 = d3.select("#chart-recovered").append("svg")
 
 
 
-d3.json("/data/bar-chart-total.json", function(error, data) {
+d3.json("../data/bar-chart-total.json", function(error, data) {
   if (error) throw error;
 
   x.domain(data.map(function(d) { return d.day; }));
@@ -113,8 +113,7 @@ d3.json("/data/bar-chart-total.json", function(error, data) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Number of Total Cases");
+      .style("text-anchor", "end");
 
   svg.selectAll(".bar")
       .data(data)
@@ -128,7 +127,7 @@ d3.json("/data/bar-chart-total.json", function(error, data) {
 });
 
 
-d3.json("/data/bar-chart-active.json", function(error, data) {
+d3.json("../data/bar-chart-active.json", function(error, data) {
   if (error) throw error;
 
   x.domain(data.map(function(d) { return d.day; }));
@@ -146,8 +145,7 @@ d3.json("/data/bar-chart-active.json", function(error, data) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Number of Active Cases");
+      .style("text-anchor", "end");
 
   svg2.selectAll(".bar")
       .data(data)
@@ -161,7 +159,7 @@ d3.json("/data/bar-chart-active.json", function(error, data) {
       .attr("height", function(d) { return height - y(d.active); }) ;
 });
 
-d3.json("/data/bar-chart-deceased.json", function(error, data) {
+d3.json("../data/bar-chart-deceased.json", function(error, data) {
   if (error) throw error;
 
   x.domain(data.map(function(d) { return d.day; }));
@@ -179,8 +177,7 @@ d3.json("/data/bar-chart-deceased.json", function(error, data) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Number of Deceased");
+      .style("text-anchor", "end");
 
   svg3.selectAll(".bar")
       .data(data)
@@ -194,7 +191,7 @@ d3.json("/data/bar-chart-deceased.json", function(error, data) {
 });
 
 
-d3.json("/data/bar-chart-recovered.json", function(error, data) {
+d3.json("../data/bar-chart-recovered.json", function(error, data) {
   if (error) throw error;
 
   x.domain(data.map(function(d) { return d.day; }));
@@ -212,9 +209,7 @@ d3.json("/data/bar-chart-recovered.json", function(error, data) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
-      .style("text-anchor", "end")
-
-      .text("Number of Recovered Cases");
+      .style("text-anchor", "end");
 
   svg4.selectAll(".bar")
       .data(data)
@@ -229,9 +224,6 @@ d3.json("/data/bar-chart-recovered.json", function(error, data) {
 
 
 </script>
-
-
-
 
 
 <ul class="post-list">
