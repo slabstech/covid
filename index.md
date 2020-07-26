@@ -66,6 +66,8 @@ English Version Below
 
   * [Twitter DC Dharwad](https://twitter.com/dc_dharwad)
 
+  * [Covid19India.org](Covid19India.org)
+
   ------------
 
 * Disclaimer :

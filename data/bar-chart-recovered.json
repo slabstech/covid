@@ -1,0 +1,9 @@
+---
+layout: none
+---
+[{% for chart in site.data.covid-day-status %}
+  {
+    "day": "{{ chart.day }}",
+    "recovered": "{{ chart.recovered }}"
+  }{% if forloop.last == false %},{% endif %}
+{% endfor %}]

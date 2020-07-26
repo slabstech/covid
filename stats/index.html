@@ -1,0 +1,112 @@
+---
+layout: page
+title: "Status for the Day"
+excerpt: ""
+modified: 2020-07-24T19:44:38.564948-04:00
+
+---
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<div id="chart-total"></div>
+<div id="chart-active"></div>
+
+<style>
+
+/* Bar Chart */
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 500 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+
+var svg = d3.select("#chart-total").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json("/data/bar-chart-total.json", function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.day; }));
+  y.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of Total Cases");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.day); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.total); })
+      .attr("height", function(d) { return height - y(d.total); });
+});
+
+function type(d) {
+  d.total = +d.total;
+  return d;
+}
+</script>
+
+
+
+
+
+<ul class="post-list">
+{% for post in site.categories.stats %}
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</span>{% endif %}</a></article></li>
+{% endfor %}
+</ul>
