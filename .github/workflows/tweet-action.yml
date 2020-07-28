@@ -7,9 +7,9 @@ jobs:
   tweet:
     runs-on: ubuntu-latest
     steps:
-      - uses: ethomson/send-tweet-action@v1
+      - uses: sachinsshetty/send-tweet-jekyll-action@v1
         with:
-          status: "Status of Covid Cases in Hubbali Dharwad - https://slabs.tech/covid/stats !"
+          status: "$GITHUB_RUN_ID - $(date +'%Y-%m-%dT%H:%M:%S') : Status of Covid Cases in Hubbali Dharwad - https://slabs.tech/covid/stats !"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
