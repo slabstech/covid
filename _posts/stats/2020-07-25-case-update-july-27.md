@@ -7,12 +7,20 @@ categories: stats
 
 Dharwad District
 
-No. of Cases > 3380
+|Topic|Number|
+| ------------- | ------------- |
+|Confirmed Cases|3380|
+|New Cases|193|
+|Active Cases|1888|
+|Recovered Cases|1389|
+|Deceased|103|
 
-No. New Cases > 193
+ಧಾರವಾಡ ಜಿಲ್ಲೆಯಲ್ಲ
 
-No. of Active > 1888
-
-No. of Recovered > 1389
-
-No. of Deceased > 103
+|ವಿಷಯ|ಸಂಖ್ಯೆ|
+| ------------- | ------------- |
+|ದೃಢಪಟ್ಟಿರುವ ಪ್ರಕರಣಗಳು |3380|
+|ಹೊಸ ಕೋವಿಡ್-19 ಪಾಸಿಟಿವ್ ಪ್ರಕರಣಗಳು |193|
+|ಸಕ್ರಿಯ ಪ್ರಕರಣಗಳ ಸಂಖ್ಯೆ |1888|
+|ಚೇತರಿಸಿಕೊಂಡ ಪ್ರಕರಣಗಳ ಸಂಖ್ಯೆ |1389|
+|ಮೃೃತಪಟ್ಟವರ ಸಂಖ್ಯೆ  |103|
