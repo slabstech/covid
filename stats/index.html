@@ -7,7 +7,7 @@ modified: 2020-07-24T19:44:38.564948-04:00
 ---
 <script src="//d3js.org/d3.v3.min.js"></script>
 
-<div id="chart-new-case">
+<!-- <div id="chart-new-case"> -->
 <table>
 <tr>
   <td><div id="chart-total"></div> Confirmed Cases
@@ -94,7 +94,7 @@ var svg4 = d3.select("#chart-recovered").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var svg5 = d3.select("#chart-new-cases").append("svg")
+var svg5 = d3.select("#chart-new-case").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -232,7 +232,7 @@ d3.json("../data/bar-chart-new-case.json", function(error, data) {
   if (error) throw error;
 
   x.domain(data.map(function(d) { return d.day; }));
-  y.domain([0, d3.max(data, function(d) { return d.recovered; })]);
+  y.domain([0, d3.max(data, function(d) { return d.new_case; })]);
 
   svg5.append("g")
       .attr("class", "x axis")
@@ -255,8 +255,8 @@ d3.json("../data/bar-chart-new-case.json", function(error, data) {
       .attr("fill", function (d){ return "lightgreen"; })
       .attr("x", function(d) { return x(d.day); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.recovered); })
-      .attr("height", function(d) { return height - y(d.recovered); });
+      .attr("y", function(d) { return y(d.new_case); })
+      .attr("height", function(d) { return height - y(d.new_case); });
 });
 
 

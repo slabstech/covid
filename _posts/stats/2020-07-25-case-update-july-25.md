@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Covid Updates for 25 - July - 2020"
-date:   2020-07-24 13:20:40 +0530
+date:   2020-07-25 13:20:40 +0530
 categories: stats
 ---
 
