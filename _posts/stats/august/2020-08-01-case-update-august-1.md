@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Covid Updates for 29 - July - 2020"
-date:   2020-07-29 13:20:40 +0530
+title:  "Covid Updates for 1 - August - 2020"
+date:   2020-08-01 13:20:40 +0530
 categories: stats
 ---
 

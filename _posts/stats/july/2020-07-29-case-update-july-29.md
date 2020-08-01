@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Covid Updates for 30 - July - 2020"
-date:   2020-07-30 13:20:40 +0530
+title:  "Covid Updates for 29 - July - 2020"
+date:   2020-07-29 13:20:40 +0530
 categories: stats
 ---
 
@@ -11,7 +11,7 @@ Dharwad District
 | ------------- | ------------- |
 |Confirmed Cases|3731|
 |New Cases|175|
-|Active Cases|12102|
+|Active Cases|2102|
 |Recovered Cases|1513|
 |Deceased|116|
 
