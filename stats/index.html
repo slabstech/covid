@@ -9,18 +9,24 @@ modified: 2020-07-24T19:44:38.564948-04:00
 
 <!-- <div id="chart-new-case"> -->
 <table>
-<tr>
-  <td><div id="chart-total"></div> Confirmed Cases
-</td>
-  <td><div id="chart-active"></div> Active Cases
-</td>
-</tr>
-<tr>
-  <td><div id="chart-deceased"></div> Deceased
-</td>
-  <td><div id="chart-recovered"></div> Recovered
-</td>
-</tr>
+  <tr>
+    <td><div id="chart-new-case"></div> New Cases
+    </td>
+    <td><div id="chart-icu"></div> Treatment in ICU
+    </td>
+  </tr>
+  <tr>
+    <td><div id="chart-total"></div> Confirmed Cases
+    </td>
+    <td><div id="chart-active"></div> Active Cases
+    </td>
+  </tr>
+  <tr>
+    <td><div id="chart-deceased"></div> Deceased
+    </td>
+    <td><div id="chart-recovered"></div> Recovered
+    </td>
+  </tr>
 </table>
 
 
@@ -99,6 +105,13 @@ var svg5 = d3.select("#chart-new-case").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var svg6 = d3.select("#chart-icu").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
 
 d3.json("../data/bar-chart-total.json", function(error, data) {
@@ -252,12 +265,45 @@ d3.json("../data/bar-chart-new-case.json", function(error, data) {
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("fill", function (d){ return "lightgreen"; })
+      .attr("fill", function (d){ return "#3333ff"; })
       .attr("x", function(d) { return x(d.day); })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.new_case); })
       .attr("height", function(d) { return height - y(d.new_case); });
 });
+
+d3.json("../data/bar-chart-icu.json", function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.day; }));
+  y.domain([0, d3.max(data, function(d) { return d.icu; })]);
+
+  svg6.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg6.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end");
+
+  svg6.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("fill", function (d){ return "#ffcccc"; })
+      .attr("x", function(d) { return x(d.day); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.icu); })
+      .attr("height", function(d) { return height - y(d.icu); });
+});
+
+
 
 
 </script>

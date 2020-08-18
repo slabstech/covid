@@ -3,9 +3,9 @@ layout: none
 ---
 {% assign day-stats = site.data.covid-day-status |  reverse %}
 
-[{% for chart in day-stats limit:7 %}
+[{% for chart in day-stats reversed limit:7 %}
   {
     "day": "{{ chart.day }}",
-    "total": "{{ chart.new_case }}"
+    "new_case": "{{ chart.new_case }}"
   }{% if forloop.last == false %},{% endif %}
 {% endfor %}]

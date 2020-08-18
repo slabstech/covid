@@ -6,6 +6,6 @@ layout: none
 [{% for chart in day-stats reversed limit:7 %}
   {
     "day": "{{ chart.day }}",
-    "total": "{{ chart.total }}"
+    "icu": "{{ chart.icu }}"
   }{% if forloop.last == false %},{% endif %}
 {% endfor %}]
