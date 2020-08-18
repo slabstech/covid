@@ -1,7 +1,9 @@
 ---
 layout: none
 ---
-[{% for chart in site.data.covid-day-status %}
+{% assign day-stats = site.data.covid-day-status |  reverse %}
+
+[{% for chart in day-stats limit:7 %}
   {
     "day": "{{ chart.day }}",
     "total": "{{ chart.new_case }}"
