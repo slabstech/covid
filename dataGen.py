@@ -1,6 +1,6 @@
 # import required module
 import os,calendar;
-
+from time import strptime
 import yaml
 
 # assign directory
@@ -14,10 +14,11 @@ for filename in os.listdir(directory):
     if 'covid' in filename:
         #covid-day-status-2020.yaml extract year
         year=filename[17:21]
-        print(year)
+        #print(year)
 
         stats_path="_posts/stats/" + year
-        print(stats_path)
+
+        #print(stats_path)
         if not os.path.isdir(stats_path):
             print("")
             try:
@@ -44,38 +45,59 @@ for filename in os.listdir(directory):
             try:
                 #print(yaml.safe_load(stream))
                 data = yaml.safe_load(stream)
-                #print(data)
 
                 for result in data:
                     #print(result)
 
-                    f = open("demofile2.txt", "w")
+                    #2020-07-24-case-update-july-24
+
+                    date = result['day'].split("-")
+
+                    month_int = strptime(date[1],'%b').tm_mon
+                    month_str=str(month_int)
+
+                    date_str = month_str+  '-' + date[0]
+                    case_file=year+ '-' + date_str +'-case-update-'+ date[1] + '-' + date[0] +'.md'
+
+                    case_file_path = stats_path + "/" + calendar.month_name[month_int] + "/" + case_file
+
+                    #print(case_file_path )
+                    #print(case_file)
+
+                    if not os.path.isfile(case_file_path):
+
+                        f = open(case_file_path, "w")
+
+                        f.write('---  \n'\
+                        'layout: post \n'\
+                        'title:  "Covid Updates for ' + date[0] + '-'+ calendar.month_name[month_int]+ '-'+ year + '" \n'\
+                        'date:   '+ year+ '-' + date_str  + ' 13:20:40 +0530 \n'\
+                        'categories: stats \n'\
+                        '--- \n\n'\
+
+                        'Hubballi - Dharwad District \n\n'\
+
+                        'No. of Cases > '+result['total']+ ' \n\n'\
+
+                        'No. of Active > '+result['active']+ ' \n\n'\
+
+                        'No. of New Case > '+result['new_case']+ ' \n\n'\
+
+                        'No. of Recovered > '+ result['recovered'] + ' \n\n'\
+
+                        'No. of Deceased > '+ result['deceased'] + ' \n\n'\
 
 
+                        )
 
-                    f.write(result['day'])
-                    f.write(result['active'])
-                    f.write(result['total'])
-                    f.write(result['recovered'])
-                    f.write(result['deceased'])
-                    f.write(result['new_case'])
-                    if 'icu' in result:
-                        f.write(result['icu'])
-                    if 'vaccinated' in result:
-                        f.write(result['vaccinated'])
 
-                    f.close()
+                        if 'icu' in result:
+                            f.write('No. of ICU Cases > '+ result['icu'] + '\n\n')
+                        if 'vaccinated' in result:
+                            f.write('No. of Vaccination Done > '+ result['vaccinated']+ '\n\n')
 
-                    print(result['day'])
-                    print(result['active'])
-                    print(result['total'])
-                    print(result['recovered'])
-                    print(result['deceased'])
-                    print(result['new_case'])
-                    if 'icu' in result:
-                        print(result['icu'])
-                    if 'vaccinated' in result:
-                        print(result['vaccinated'])
+                        f.write('View All Stats at [https://slabs.tech/covid/stats/](https://slabs.tech/covid/stats/)')
+                        f.close()
 
             except yaml.YAMLError as exc:
                 print(exc)
