@@ -10,6 +10,8 @@ jobs:
       - uses: sachinsshetty/send-tweet-jekyll-action@master
         with:
           status: "Status of Covid Cases in Hubbali Dharwad on - "
+          hashTag : "#Dharwad,#hubli,#Hubbali,#COVID19karnataka #COVID19India #covid19dharwad, #covid "
+          personTag : "@dc_dharwad, @BSBommai, @JoshiPralhad, @JagadishShettar,@BJP4Karnataka"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
