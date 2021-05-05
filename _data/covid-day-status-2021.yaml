@@ -1,4 +1,11 @@
-
+- day: '30-April'
+  active: '3751'
+  total: '30439'
+  recovered : '424'
+  deceased : '07'
+  new_case  : '703'
+  icu : '277'
+  vaccinated : '1534'
 - day: '01-May'
   active: '3828'
   total: '30979'
