@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-{% assign day-stats = site.data.covid-day-status |  reverse %}
+{% assign day-stats = site.data.covid-day-status-2021 |  reverse %}
 
 [{% for chart in day-stats reversed limit:7 %}
   {
